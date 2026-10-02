@@ -33,3 +33,18 @@ class Automovil:
 
     def frenar(self):
         self._velocidad_actual = 0.0
+
+def calcular_tiempo_llegada(self, distancia: float) -> float:
+        if self._velocidad_actual <= 0:
+            return float('inf')
+        return distancia / self._velocidad_actual
+
+    def __str__(self) -> str:
+        return f"{self.marca} {self.modelo} ({self.color}) - Vel. Actual: {self.velocidad_actual} km/h"
+
+
+if __name__ == "__main__":
+    auto = Automovil("Toyota", "Corolla", 2.0, "Gasolina", "Sedán", 4, 5, 200, "Rojo")
+    auto.acelerar(100)
+    print(auto)
+    print(f"Tiempo estimado para 200 km: {auto.calcular_tiempo_llegada(200):.2f} horas")
